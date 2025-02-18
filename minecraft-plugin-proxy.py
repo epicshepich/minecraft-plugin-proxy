@@ -11,6 +11,7 @@ from xml.etree import ElementTree as ET
 api = FastAPI()
 
 @api.get('/viabackwards/velocity')
+@api.head('/viabackwards/velocity')
 async def viabackwards_velocity():
 
     latest_release = requests.get(
@@ -21,6 +22,7 @@ async def viabackwards_velocity():
     )
 
 @api.get('/luckperms/{server_type}')
+@api.head('/luckperms/{server_type}')
 async def luckperms_velocity(server_type):
     
     luckperms_metadata = requests.get('https://metadata.luckperms.net/data/all').json()
@@ -31,6 +33,7 @@ async def luckperms_velocity(server_type):
     
 
 @api.get('/tribufu-velocityrcon')
+@api.head('/tribufu-velocityrcon')
 async def tribufu_velocityrcon():
 
     velocityrcon_metadata = requests.get('https://mvn.tribufu.com/releases/com/tribufu/Tribufu-VelocityRcon/maven-metadata.xml').text

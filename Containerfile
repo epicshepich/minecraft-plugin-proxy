@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 # Serve the API
-CMD ['fastapi', 'run', '--port', '8000', '/app/minecraft-plugin-proxy.py']
+CMD ["fastapi", "run", "--port", "8000", "/app/minecraft-plugin-proxy.py"]
